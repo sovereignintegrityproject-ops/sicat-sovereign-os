@@ -1,0 +1,15 @@
+{
+  "name": "2_sentry_engine",
+  "version": "1.0.0",
+  "main": "sentry_engine.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "snarkjs": "^0.7.6"
+  }
+}

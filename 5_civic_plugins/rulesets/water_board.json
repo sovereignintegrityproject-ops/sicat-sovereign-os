@@ -1,0 +1,14 @@
+{
+  "plugin_name": "Agricultural Water Stewardship",
+  "author": "Arusha District Water Board",
+  "active_status": true,
+  "red_lines": [
+    {
+      "parameter": "water_allocation_foreign_industrial",
+      "max_limit_percentage": 0.30,
+      "condition": "drought_status_active",
+      "punitive_action": "VETO_AND_SLASH",
+      "rationale": "AI cannot allocate more than 30% of reservoir water to foreign industrial farming during a drought."
+    }
+  ]
+}

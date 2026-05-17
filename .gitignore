@@ -1,0 +1,12 @@
+# Node dependencies
+node_modules/
+package-lock.json
+
+# Rust / Solana build files
+target/
+**/.anchor
+**/test-ledger
+
+# ZK Circuit heavy build files
+3_zk_circuits/powersOfTau*
+3_zk_circuits/build/quorum.sym

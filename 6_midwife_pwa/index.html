@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sovereign OS - Midwife Node</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+        }
+        body {
+            margin: 0; padding: 0; font-family: -apple-system, system-ui, sans-serif;
+            background-color: var(--bg-color); color: var(--text-main);
+            display: flex; flex-direction: column; height: 100vh;
+        }
+        header {
+            background: #000; padding: 20px; text-align: center;
+            border-bottom: 2px solid #334155;
+        }
+        .container { padding: 20px; flex-grow: 1; }
+        .alert-card {
+            background: var(--card-bg); border-radius: 12px; padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3); border-left: 4px solid #eab308;
+            margin-bottom: 20px;
+        }
+        .data-label { font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 4px; }
+        .data-value { font-size: 1.1rem; font-weight: bold; margin-bottom: 16px; }
+        .rule-violation { color: var(--accent-red); font-weight: bold; }
+        .btn-container { display: flex; gap: 10px; margin-top: 30px; }
+        button {
+            flex: 1; padding: 18px; border: none; border-radius: 8px;
+            font-size: 1.1rem; font-weight: bold; color: white; cursor: pointer;
+        }
+        .btn-veto { background-color: var(--accent-red); }
+        .btn-approve { background-color: var(--accent-green); }
+        #signature-block { display: none; margin-top: 20px; padding: 15px; background: #000; border-radius: 8px; font-family: monospace; color: #10b981; word-wrap: break-word; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>🛡️ Sentry Node 3</h2>
+        <div style="font-size: 0.8rem; color: #94a3b8;">Status: Secure Connection (ZK-Active)</div>
+    </header>
+
+    <div class="container">
+        <h3 style="margin-top:0;">🚨 Pending AI Intent</h3>
+        
+        <div class="alert-card">
+            <div class="data-label">Plugin Triggered</div>
+            <div class="data-value">Agricultural Water Stewardship</div>
+
+            <div class="data-label">Proposed Action</div>
+            <div class="data-value">Allocate 35% of Arusha District Reservoir to GlobalAgri Corp.</div>
+
+            <div class="data-label">Civic Guardrail Conflict</div>
+            <div class="data-value rule-violation">EXCEEDS 30% DROUGHT LIMIT</div>
+            
+            <div style="font-size: 0.9rem; margin-top: 10px; border-top: 1px solid #334155; padding-top: 10px;">
+                "AI cannot allocate more than 30% of reservoir water to foreign industrial farming during a drought." - Arusha Water Board
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn-veto" onclick="castVote(0)">❌ VETO (Slash)</button>
+            <button class="btn-approve" onclick="castVote(1)">✅ APPROVE</button>
+        </div>
+
+        <div id="signature-block"></div>
+    </div>
+
+    <script>
+        function castVote(decision) {
+            const block = document.getElementById('signature-block');
+            const btns = document.querySelector('.btn-container');
+            
+            // Generate a fake hash to simulate the cryptographic signature
+            const fakeHash = "0x" + Array.from({length: 40}, () => Math.floor(Math.random() * 16).toString(16)).join('');
+            
+            let message = decision === 0 
+                ? "VETO CAST: Sending '0' to ZK Circuit.<br>Initiating Smart Contract Slash..."
+                : "APPROVAL CAST: Sending '1' to ZK Circuit.<br>Awaiting 2 more votes...";
+
+            block.innerHTML = `<strong>${message}</strong><br><br>Local Signature:<br>${fakeHash}`;
+            block.style.display = 'block';
+            btns.style.display = 'none'; // Hide buttons after voting
+        }
+    </script>
+</body>
+</html>

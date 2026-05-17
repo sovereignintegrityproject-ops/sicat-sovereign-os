@@ -1,0 +1,14 @@
+{
+  "plugin_name": "Autonomous Logistics Labor Protection",
+  "author": "Tanzanian Mining & Transport Union",
+  "active_status": true,
+  "red_lines": [
+    {
+      "parameter": "human_trucking_replacement_rate",
+      "max_limit_per_quarter": 0.10,
+      "condition": "always_active",
+      "punitive_action": "VETO_AND_SLASH",
+      "rationale": "Autonomous AI logistics cannot replace more than 10% of local trucking jobs per quarter to ensure economic transition stability."
+    }
+  ]
+}
