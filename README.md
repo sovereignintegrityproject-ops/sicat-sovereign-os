@@ -1,31 +1,4 @@
-sicat-sovereign-os/
-├── README.md                  # The Manifesto & Quickstart Guide                     
-│
-├── 1_the_creche/              # The Isolated Sandbox
-│   ├── docker-compose.yml     # Firebreak container settings
-│   └── model_runner.py        # Python script to run AI safely offline
-│
-├── 2_sentry_engine/           # The Automated Compliance Auditor
-│   ├── sentry_engine.js       # The Core Node.js script we built
-│   ├── ipfs_pinner.js         # Handles the Pinata Audit uploads
-│   └── package.json
-│
-├── 3_zk_circuits/             # The "Sealing Wax" (Zero-Knowledge Proofs)
-│   ├── quorum.circom          # The 3-of-5 Voting logic
-│   └── build/                 # Compiled WASM provers
-│
-├── 4_ledger_contracts/        # Solana Rust Smart Contracts (SIS)
-│   ├── programs/
-│   │   └── sentry_slasher/    # The code that penalizes the $SICAT deposit
-│   └── Anchor.toml
-│
-├── 5_civic_plugins/           # The Community Shield
-│   ├── translator_agent.js    # LLM script that turns laws into JSON
-│   └── rulesets/              # e.g., water_board.json, education_sdg4.json
-│
-└── 6_midwife_pwa/             # The 5-Phone Frontend (Dashboard)
-    ├── index.html             # The live feed and QR scanner
-    └── styles.css
+
 THE SOVEREIGN INTEGRITY MANIFESTO
 An Address to the Leaders, Elders, and Sentries of the Global South
 
